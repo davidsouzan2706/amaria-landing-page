@@ -343,7 +343,8 @@ html {
 /* Femicide Highlight Card */
 .femicide-highlight-card {
     background-image: url('assets/images/pare.png');
-    background-position: right center;
+    background-position: calc(100% + 350px) center;
+    /* Offsets right center by 350px to hide the empty space */
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-color: var(--bg-dark);
