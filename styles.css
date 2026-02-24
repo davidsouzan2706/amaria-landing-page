@@ -596,8 +596,11 @@ html {
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    /* Move box to the bottom */
     justify-content: center;
+    padding-bottom: 3rem;
+    /* Keep it slightly off the absolute bottom edge */
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
