@@ -1105,10 +1105,11 @@ html {
         /* Hide on small screens for simplicity in this version */
     }
 
-    /* Prevent text stretching viewport width */
+    /* Prevent text stretching viewport width and adjust background image so the face is visible */
     .femicide-highlight-card {
-        padding: 2rem;
-        background-position: center;
+        padding: 5rem 1.5rem 1.5rem 1.5rem;
+        background-position: calc(100% + 150px) top;
+        background-size: 150% auto;
     }
 
     .femicide-content {
