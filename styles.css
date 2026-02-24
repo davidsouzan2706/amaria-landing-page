@@ -1114,8 +1114,10 @@ html {
     .femicide-highlight-card {
         padding: 0;
         background-image: url('assets/images/pare.png');
-        background-position: 70% top;
-        background-size: cover;
+        background-position: center top;
+        /* Center the image to show both sides */
+        background-size: 150% auto;
+        /* Scale the width so the hand fits in the frame */
         background-color: var(--bg-dark);
         border-top: 6px solid var(--accent-primary);
         box-shadow: 0 15px 40px rgba(137, 65, 137, 0.1);
@@ -1250,5 +1252,10 @@ html {
 
     .femicide-number {
         font-size: 1.8rem;
+    }
+
+    /* Further refine the background size for very narrow screens so the hand isn't cut off */
+    .femicide-highlight-card {
+        background-size: 180% auto;
     }
 }
