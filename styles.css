@@ -836,7 +836,8 @@ html {
     /* Stops below navbar */
     display: flex;
     align-items: center;
-    min-height: 60vh;
+    min-height: auto;
+    /* Allow box height to fit content proportionally */
     padding: 0;
     overflow: hidden;
     background: var(--bg-darker);
@@ -877,7 +878,8 @@ html {
 
 .stacking-text {
     flex: 1;
-    padding: 4rem;
+    padding: 3rem 4rem;
+    /* Reduced top/bottom padding to match image side proportions */
     display: flex;
     flex-direction: column;
     justify-content: center;
