@@ -374,6 +374,11 @@ html {
     text-align: left;
 }
 
+/* Hide stand-alone mobile image on Desktop */
+.femicide-mobile-img {
+    display: none;
+}
+
 .femicide-alert {
     background: var(--accent-secondary);
     color: white;
@@ -1105,19 +1110,34 @@ html {
         /* Hide on small screens for simplicity in this version */
     }
 
-    /* Prevent text stretching viewport width */
+    /* On mobile, remove the background image and use the separate <img> tag */
     .femicide-highlight-card {
-        padding: 2rem 1rem 1rem 1rem;
-        background-position: center;
-        background-size: auto 100%;
-        min-height: 550px;
-        justify-content: flex-end;
-        align-items: center;
+        padding: 0;
+        background-image: none;
+        background-color: transparent;
+        border-top: none;
+        box-shadow: none;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .femicide-mobile-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        object-fit: cover;
     }
 
     .femicide-content {
-        max-width: 90%;
-        padding: 1.5rem;
+        max-width: 100%;
+        padding: 2rem;
+        border-radius: 0 0 16px 16px;
+        border-top: none;
+        background: rgba(26, 26, 30, 0.95);
+        /* Darker background so text is readable */
         margin: 0;
     }
 
