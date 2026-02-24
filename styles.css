@@ -1124,6 +1124,13 @@ html {
         font-size: 5rem;
     }
 
+    /* Disable Sticky Stacking on Mobile because flex-columns make cards taller than window, causing overlapping */
+    .stacking-card {
+        position: relative;
+        top: 0 !important;
+        margin-top: 1.5rem !important;
+    }
+
     /* Force columns instead of row for side-by-side cards */
     .stacking-content {
         flex-direction: column;
