@@ -1104,24 +1104,70 @@ html {
         display: none;
         /* Hide on small screens for simplicity in this version */
     }
+
+    /* Prevent text stretching viewport width */
+    .femicide-highlight-card {
+        padding: 2rem;
+        background-position: center;
+    }
+
+    .femicide-content {
+        max-width: 100%;
+        padding: 2rem;
+    }
+
+    .femicide-content h3 {
+        font-size: 3rem;
+    }
+
+    .femicide-number {
+        font-size: 5rem;
+    }
+
+    /* Force columns instead of row for side-by-side cards */
+    .stacking-content {
+        flex-direction: column;
+    }
+
+    .stacking-text {
+        padding: 2rem;
+    }
+
+    .stacking-image {
+        padding: 1.5rem;
+        min-height: 250px;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 600px) {
     .hero {
-        padding-top: 12vh;
-        min-height: 800px;
+        padding-top: 15vh;
+        min-height: 100vh;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .stat {
-        font-size: 4rem;
+        font-size: 3.5rem;
     }
 
     .speaker-card {
-        padding: 2rem;
+        padding: 1.5rem;
+    }
+
+    .glass-panel {
+        padding: 1.5rem;
     }
 
     .contact-item {
@@ -1140,5 +1186,13 @@ html {
 
     .scroll-indicator {
         bottom: 0.5rem;
+    }
+
+    .femicide-content h3 {
+        font-size: 2.2rem;
+    }
+
+    .femicide-number {
+        font-size: 4rem;
     }
 }
