@@ -343,14 +343,10 @@ html {
 /* Femicide Highlight Card */
 .femicide-highlight-card {
     /* Base background color + Pare image merged with gradient */
-    background-image:
-        /* Gradient covering the Pare image fading into the background color */
-        linear-gradient(to right, rgba(235, 225, 240, 0) 0%, rgba(235, 225, 240, 0.4) 20%, rgba(235, 225, 240, 0.95) 45%, var(--bg-darker) 65%),
-        url('assets/images/pare.png');
-    background-position:
-        top left, top left;
-    background-size:
-        70% 100%, auto 100%;
+    /* Base background color + Original Pare image with NO effects */
+    background-image: url('assets/images/pare.png');
+    background-position: left center;
+    background-size: auto 100%;
     background-repeat: no-repeat;
     background-color: var(--bg-darker);
 
