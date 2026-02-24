@@ -114,4 +114,72 @@ document.addEventListener("DOMContentLoaded", () => {
         // Start automatic transition
         startSlideTimer();
     }
+
+    /* Action Gallery Sliders Logic */
+    const galleries = document.querySelectorAll('.gallery-slider');
+
+    galleries.forEach(gallery => {
+        const photos = gallery.querySelectorAll('.gallery-photo');
+        const prevBtn = gallery.querySelector('.prev-gallery');
+        const nextBtn = gallery.querySelector('.next-gallery');
+        let currentIndex = 0;
+
+        if (photos.length === 0) return;
+
+        const showPhoto = (index) => {
+            photos.forEach(p => p.classList.remove('active'));
+            photos[index].classList.add('active');
+        };
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Avoid triggering modal
+                currentIndex = (currentIndex + 1) % photos.length;
+                showPhoto(currentIndex);
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Avoid triggering modal
+                currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+                showPhoto(currentIndex);
+            });
+        }
+    });
+
+    /* Fullscreen Image Modal Logic */
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.querySelector('.close-modal');
+    const allGalleryPhotos = document.querySelectorAll('.gallery-photo');
+
+    if (modal && modalImg && closeBtn) {
+        // Open modal on image click
+        allGalleryPhotos.forEach(photo => {
+            photo.addEventListener('click', () => {
+                modal.classList.add('active');
+                modalImg.src = photo.src;
+            });
+        });
+
+        // Close modal on specific 'X' button click
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Close modal when clicking anywhere outside the image
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Close modal on Escape key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                modal.classList.remove('active');
+            }
+        });
+    }
 });
