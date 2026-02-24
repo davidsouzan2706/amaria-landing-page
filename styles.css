@@ -1149,6 +1149,8 @@ html {
         font-size: 1.3rem;
         /* Reduced font size */
         margin-bottom: 0.5rem;
+        text-align: center;
+        /* Centering just the title */
     }
 
     .femicide-number {
@@ -1160,7 +1162,10 @@ html {
         font-size: 0.65rem;
         /* Reduced font size */
         padding: 0.3rem 0.8rem;
-        margin-bottom: 0.8rem;
+        margin: 0 auto 0.8rem auto;
+        /* Center the badge and keep bottom margin */
+        display: block;
+        width: fit-content;
     }
 
     .femicide-label {
