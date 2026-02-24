@@ -969,7 +969,7 @@ html {
     z-index: 2;
 }
 
-.slider-btn {
+.gallery-slider .slider-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -987,15 +987,15 @@ html {
     transition: background 0.3s ease;
 }
 
-.slider-btn:hover {
+.gallery-slider .slider-btn:hover {
     background: var(--accent-primary);
 }
 
-.prev-gallery {
+.gallery-slider .prev-gallery {
     left: 10px;
 }
 
-.next-gallery {
+.gallery-slider .next-gallery {
     right: 10px;
 }
 
