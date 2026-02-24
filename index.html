@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Projeto Amaria: Combate à Violência Contra a Mulher e ao Feminicídio no Distrito Federal. Viver sem violência é um direito.">
+    <title>Projeto Amaria | Combate ao Feminicídio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navegação Flutuante -->
+    <nav class="floating-nav fade-in">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">PROJETO <span>AMARIA</span></a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#dados">O Problema</a></li>
+                <li><a href="#projeto">O Projeto</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+            </ul>
+            <a href="#contato" class="btn btn-nav">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="inicio">
+        <!-- Hero Slider Background -->
+        <div class="hero-slider">
+            <!-- Slide 1: Video -->
+            <div class="slide active">
+                <video autoplay loop muted playsinline class="bg-video">
+                    <source src="assets/videos/palestra1.mp4" type="video/mp4">
+                    <!-- Placeholder color if video fails to load -->
+                </video>
+            </div>
+            <!-- Slide 2: Video -->
+            <div class="slide">
+                <video autoplay loop muted playsinline class="bg-video">
+                    <source src="assets/videos/palestra2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!-- Slide 3: Video -->
+            <div class="slide">
+                <video autoplay loop muted playsinline class="bg-video">
+                    <source src="assets/videos/palestra3.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!-- Slide 4: Video -->
+            <div class="slide">
+                <video autoplay loop muted playsinline class="bg-video">
+                    <source src="assets/videos/palestra4.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="container hero-content">
+            <p class="onu-alert"><i class="fa-solid fa-triangle-exclamation"></i> ONU: "A PANDEMIA MAIS LONGA E MORTAL
+                DO MUNDO"</p>
+            <h1 class="hero-title">A VIOLÊNCIA CONTRA A<br><span class="highlight">MULHER NÃO TEM ESPAÇO.</span></h1>
+            <p class="hero-subtitle">O Feminicídio cresce e o Brasil enfrenta um aumento em todos os tipos de violência
+                de gênero. Estamos diante de um problema gravíssimo e precisamos agir agora.</p>
+            <div class="cta-group">
+                <a href="#dados" class="btn btn-primary">Entenda a Realidade</a>
+                <a href="#projeto" class="btn btn-secondary">Conheça o Projeto Amaria</a>
+            </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <button class="slider-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <button class="slider-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="scroll-indicator">
+            <a href="#dados"><i class="fa-solid fa-chevron-down"></i></a>
+        </div>
+    </header>
+
+    <!-- Seção de Dados Criminais DF -->
+    <section id="dados" class="data-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>A Realidade em Números</h2>
+                <p>O impacto devastador da violência de gênero em nossa sociedade</p>
+            </div>
+
+            <!-- NEW: Prominent Femicide Card -->
+            <div class="femicide-highlight-card glass-panel fade-in delay-1">
+                <div class="femicide-content">
+                    <div class="femicide-alert">ALERTA NACIONAL</div>
+                    <h3>FEMINICÍDIO</h3>
+                    <div class="femicide-stat-box data-card">
+                        <span class="femicide-number number" data-target="31000">0</span>
+                        <span class="femicide-label">denúncias de violência contra a mulher registradas apenas no
+                            contexto de 2025.</span>
+                    </div>
+                    <p>O Brasil bateu recordes alarmantes em todos os tipos de violência de gênero. O feminicídio é o
+                        estágio final e letal de um ciclo contínuo que precisa ser interrompido com educação e
+                        conscientização hoje.</p>
+                </div>
+            </div>
+
+            <div class="data-grid">
+                <!-- Card 1: Estupro -->
+                <div class="data-card glass-panel fade-in slide-up">
+                    <div class="card-icon"><i class="fa-solid fa-person-harassing"></i></div>
+                    <h3>Estupro</h3>
+                    <p class="data-context">Maioria absoluta das ocorrências apresenta mulheres como vítimas desse
+                        crime.</p>
+                    <div class="stat">
+                        <span class="number" data-target="93">0</span><span class="percent">%</span>
+                    </div>
+                    <p class="data-detail">das vítimas são mulheres.</p>
+                    <p class="data-subdetail">58% das vítimas têm entre 18 e 39 anos. A maior parte dos casos ocorre no
+                        interior das próprias residências.</p>
+                </div>
+
+                <!-- Card 2: Estupro de Vulnerável -->
+                <div class="data-card glass-panel fade-in slide-up delay-1">
+                    <div class="card-icon"><i class="fa-solid fa-children"></i></div>
+                    <h3>Estupro de Vulnerável</h3>
+                    <p class="data-context">Um cenário alarmante envolvendo crianças e adolescentes no DF.</p>
+                    <div class="stat">
+                        <span class="number" data-target="85">0</span><span class="percent">%</span>
+                    </div>
+                    <p class="data-detail">das vítimas são menores de 14 anos.</p>
+                    <p class="data-subdetail">A grande maioria das ocorrências (95%) tem homens como autores. Mais de
+                        600 ocorrências documentadas apenas em 2024.</p>
+                </div>
+
+                <!-- Card 3: Importunação e Assédio -->
+                <div class="data-card glass-panel fade-in slide-up delay-2">
+                    <div class="card-icon"><i class="fa-solid fa-bus"></i></div>
+                    <h3>Importunação Sexual e Assédio</h3>
+                    <p class="data-context">Insegurança em espaços públicos, transporte coletivo e comércio.</p>
+                    <div class="stat">
+                        <span class="number" data-target="91">0</span><span class="percent">%</span>
+                    </div>
+                    <p class="data-detail">das vítimas são femininas.</p>
+                    <p class="data-subdetail">Mais de 1.000 vítimas de importunação em 2024. O crime assombra o
+                        transporte público (ônibus) e o ambiente comercial de todo o Distrito Federal.</p>
+                </div>
+            </div>
+
+            <div class="national-alert fade-in">
+                <div class="alert-box">
+                    <h4>Cenário Nacional Alerta</h4>
+                    <p>O Brasil teve aumento em todos os tipos de violência contra a mulher, acumulando mais de
+                        <strong>31 mil denúncias</strong> de violência doméstica e familiar. O Feminicídio cresceu e o
+                        país amargou queda nos índices de segurança de gênero.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Projeto Amaria -->
+    <section id="projeto" class="project-section">
+        <div class="container container-flex">
+            <div class="project-text fade-in">
+                <h2>O Projeto Amaria</h2>
+                <h3>Viver sem violência é um direito.</h3>
+                <p>Nascido da urgência de combater a violência contra a mulher e promover uma cultura de respeito,
+                    igualdade de gênero e direitos humanos, o Projeto Amaria atua por meio de um ciclo de palestras
+                    educativas e de conscientização.</p>
+
+                <p>O objetivo é elevar a conscientização sobre a violência de gênero, empoderar jovens e formar agentes
+                    de mudança comunitária, propagando amplamente a Lei Maria da Penha (Lei 11.340/06).</p>
+
+                <h4>Alcançando Múltiplos Segmentos:</h4>
+                <ul class="target-list">
+                    <li><i class="fa-solid fa-check"></i> Escolas Públicas e Particulares</li>
+                    <li><i class="fa-solid fa-check"></i> Órgãos Públicos e Entidades de Classe</li>
+                    <li><i class="fa-solid fa-check"></i> Empresas Privadas</li>
+                    <li><i class="fa-solid fa-check"></i> Amaria no Esporte (Clubes, atletas, centros olímpicos)</li>
+                </ul>
+            </div>
+
+            <div class="project-image fade-in slide-right">
+                <!-- Espaço preparado para uma imagem forte sobre o projeto, mantendo estética premium -->
+                <div class="glass-image-container">
+                    <div class="slogan-box">
+                        <span class="quote-mark">"</span>
+                        A mulher que se encontra nessa situação precisa saber que não está sozinha.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria de Ações (Stacking Cards) -->
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Galeria de Ações</h2>
+                <p>O Projeto Amaria atua diretamente nas comunidades, escolas e centros esportivos, levando a
+                    conscientização onde ela é mais necessária.</p>
+            </div>
+
+            <div class="stacking-container">
+                <!-- Card 1 -->
+                <div class="stacking-card card-1 glass-panel">
+                    <div class="stacking-content">
+                        <div class="stacking-text">
+                            <span class="step-label">AÇÃO 01</span>
+                            <h3>Impacto em Escolas Públicas</h3>
+                            <p>Palestras educacionais voltadas para adolescentes e jovens, abordando respeito, igualdade
+                                de gênero e identificação de relacionamentos abusivos desde cedo.</p>
+                        </div>
+                        <div class="stacking-image">
+                            <!-- Image 1 -->
+                            <img src="assets/images/galeria1.jpg" alt="Ação em Escolas Públicas" class="gallery-photo">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="stacking-card card-2 glass-panel">
+                    <div class="stacking-content">
+                        <div class="stacking-text">
+                            <span class="step-label">AÇÃO 02</span>
+                            <h3>Amaria no Esporte</h3>
+                            <p>Desconstruindo estereótipos prejudiciais no ambiente esportivo. Atletas, técnicos e
+                                gestores engajados como aliados na construção de um cenário mais equitativo.</p>
+                        </div>
+                        <div class="stacking-image">
+                            <!-- Image 2 -->
+                            <img src="assets/images/galeria2.jpg" alt="Ação Amaria no Esporte" class="gallery-photo">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="stacking-card card-3 glass-panel">
+                    <div class="stacking-content">
+                        <div class="stacking-text">
+                            <span class="step-label">AÇÃO 03</span>
+                            <h3>Engajamento Comunitário</h3>
+                            <p>Rodas de conversa e palestras para a comunidade em geral. Informando sobre a Lei Maria da
+                                Penha e fortalecendo a rede de apoio local.</p>
+                        </div>
+                        <div class="stacking-image">
+                            <!-- Image 3 -->
+                            <img src="assets/images/galeria3.jpg" alt="Ação em Comunidades" class="gallery-photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Palestrante -->
+    <section id="palestrante" class="speaker-section">
+        <div class="container">
+            <div class="speaker-card glass-panel fade-in">
+                <div class="speaker-info">
+                    <h2>O Idealizador</h2>
+                    <h3 class="speaker-name">Sávio César de Oliveira Reis</h3>
+                    <p class="speaker-role">Agente da Polícia Civil do Distrito Federal</p>
+                    <p class="speaker-bio">Com notória carreira na PCDF, Sávio atuou em diversas frentes (Operações
+                        Especiais, Aéreas e Repressão a Sequestro). Foi na 38ª Delegacia de Polícia onde concentrou
+                        esforços no combate à violência doméstica. Durante sua jornada, testemunhou a gravidade da
+                        violência contra a mulher e dedicou-se a compartilhar o poder da informação através da Lei Maria
+                        da Penha para toda a sociedade através de palestras engajadoras e elucidativas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato e Footer -->
+    <footer id="contato" class="contact-section">
+        <div class="container">
+            <div class="footer-content fade-in">
+                <h2>Faça a sua parte. Leve o Projeto Amaria para o seu espaço.</h2>
+                <p>A conscientização é a arma mais poderosa contra a violência. Entre em contato para agendar um ciclo
+                    de palestras ou apoiar o projeto.</p>
+
+                <div class="contact-cards">
+                    <div class="contact-item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>(61) 99966-7406</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>projetoamariabrasil@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Projeto Amaria Brasil. Todos os direitos reservados. Na luta contra o feminicídio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
