@@ -1102,7 +1102,22 @@ html {
     }
 
     .glass-image-container {
-        height: 400px;
+        height: 450px;
+        /* Increased slightly to give more room for the background image */
+    }
+
+    .slogan-box {
+        font-size: 1rem;
+        /* Much smaller font to reduce box height */
+        padding: 1rem 1.2rem;
+        max-width: 90%;
+    }
+
+    .quote-mark {
+        font-size: 3rem;
+        /* Scaled down quote mark */
+        top: -5px;
+        left: 10px;
     }
 
     .nav-links {
