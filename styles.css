@@ -345,7 +345,8 @@ html {
     /* Base background color + Pare image merged with gradient */
     /* Base background color + Original Pare image with NO effects */
     background-image: url('assets/images/pare.png');
-    background-position: left center;
+    background-position: right center;
+    /* Anchored to the right edge */
     background-size: cover;
     background-repeat: no-repeat;
     background-color: var(--bg-darker);
