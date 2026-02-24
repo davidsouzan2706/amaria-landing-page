@@ -342,7 +342,23 @@ html {
 
 /* Femicide Highlight Card */
 .femicide-highlight-card {
-    background: linear-gradient(135deg, rgba(137, 65, 137, 0.05) 0%, var(--bg-darker) 100%);
+    /* Base background color + 2 images merged with gradients */
+    background-image:
+        /* Left gradient over Pare image to fade it into the center */
+        linear-gradient(to right, rgba(251, 249, 252, 0.4) 0%, rgba(251, 249, 252, 1) 40%),
+        url('assets/images/pare.png'),
+        /* Right gradient over Maos Amarradas to fade it into the center */
+        linear-gradient(to left, rgba(251, 249, 252, 0.2) 0%, rgba(251, 249, 252, 1) 40%),
+        url('assets/images/maosamarradas.jpeg');
+    background-position:
+        top left, left center,
+        top right, right center;
+    background-size:
+        50% 100%, 35% auto,
+        50% 100%, 40% cover;
+    background-repeat: no-repeat;
+    background-color: var(--bg-darker);
+
     border-top: 6px solid var(--accent-primary);
     margin-bottom: 4rem;
     padding: 4rem 2rem;
@@ -353,28 +369,6 @@ html {
     box-shadow: 0 15px 40px rgba(137, 65, 137, 0.1);
     position: relative;
     overflow: hidden;
-}
-
-/* Watermark Background */
-.femicide-highlight-card::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    /* Move it slightly more right */
-    width: 60%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    background-image: url('assets/images/pare.png');
-    background-size: cover;
-    /* CHANGED to cover the left side smoothly */
-    background-position: center left;
-    background-repeat: no-repeat;
-    opacity: 0.35;
-    /* Increased from 0.15 to 0.35 for much higher visibility */
-    /* Very subtle against the light background */
-    z-index: 0;
-    pointer-events: none;
 }
 
 .femicide-content {
