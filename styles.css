@@ -370,8 +370,8 @@ html {
     /* CHANGED to cover the left side smoothly */
     background-position: center left;
     background-repeat: no-repeat;
-    opacity: 0.15;
-    /* Increased from 0.06 to 0.15 for better visibility */
+    opacity: 0.35;
+    /* Increased from 0.15 to 0.35 for much higher visibility */
     /* Very subtle against the light background */
     z-index: 0;
     pointer-events: none;
