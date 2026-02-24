@@ -1110,34 +1110,36 @@ html {
         /* Hide on small screens for simplicity in this version */
     }
 
-    /* On mobile, remove the background image and use the separate <img> tag */
+    /* Restore floating elegance: Background image with absolute positioned text box at bottom */
     .femicide-highlight-card {
         padding: 0;
-        background-image: none;
-        background-color: transparent;
-        border-top: none;
-        box-shadow: none;
-        min-height: auto;
-        display: flex;
-        flex-direction: column;
+        background-image: url('assets/images/pare.png');
+        background-position: 70% top;
+        background-size: cover;
+        background-color: var(--bg-dark);
+        border-top: 6px solid var(--accent-primary);
+        box-shadow: 0 15px 40px rgba(137, 65, 137, 0.1);
+        height: 600px;
+        position: relative;
+        display: block;
+        border-radius: 16px;
     }
 
     .femicide-mobile-img {
-        display: block;
-        width: 100%;
-        height: auto;
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
-        object-fit: cover;
+        display: none;
     }
 
     .femicide-content {
-        max-width: 100%;
-        padding: 2rem;
-        border-radius: 0 0 16px 16px;
-        border-top: none;
-        background: rgba(26, 26, 30, 0.95);
-        /* Darker background so text is readable */
+        position: absolute;
+        bottom: 1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 90%;
+        padding: 1.5rem;
+        border-radius: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(26, 26, 30, 0.85);
         margin: 0;
     }
 
