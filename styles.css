@@ -342,42 +342,41 @@ html {
 
 /* Femicide Highlight Card */
 .femicide-highlight-card {
-    /* Base background color + Pare image merged with gradient */
-    /* Base background color + Original Pare image with NO effects */
-    background-image: url('assets/images/pare.png');
-    background-position: left center;
-    background-size: cover;
-    background-repeat: no-repeat;
     background-color: var(--bg-dark);
-
     border-top: 6px solid var(--accent-primary);
     margin-bottom: 4rem;
-    padding: 3rem;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    /* Text box strictly on the right */
+    align-items: center;
+    text-align: center;
     box-shadow: 0 15px 40px rgba(137, 65, 137, 0.1);
     position: relative;
     overflow: hidden;
+}
+
+/* Flipped Watermark to place the face exactly on the right side */
+.femicide-highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    /* Occupies the right half */
+    height: 100%;
+    background-image: url('assets/images/pare.png');
+    background-position: left center;
+    background-size: cover;
+    transform: scaleX(-1);
+    /* Flips the image so the face is on the right edge */
+    z-index: 1;
+    pointer-events: none;
 }
 
 .femicide-content {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 55%;
-    /* Take up only the right side */
-    background: rgba(26, 26, 30, 0.65);
-    /* Dark translucent background */
-    backdrop-filter: blur(12px);
-    /* Frosted glass effect */
-    -webkit-backdrop-filter: blur(12px);
-    padding: 3rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: left;
-    /* Align text purely left inside the box */
 }
 
 .femicide-alert {
