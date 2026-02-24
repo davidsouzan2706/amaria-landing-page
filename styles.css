@@ -1113,16 +1113,17 @@ html {
     }
 
     .femicide-content {
-        max-width: 100%;
-        padding: 2rem;
+        max-width: 85%;
+        padding: 1.5rem;
+        margin-right: auto;
     }
 
     .femicide-content h3 {
-        font-size: 3rem;
+        font-size: 2.2rem;
     }
 
     .femicide-number {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     /* Disable Sticky Stacking on Mobile because flex-columns make cards taller than window, causing overlapping */
@@ -1197,10 +1198,10 @@ html {
     }
 
     .femicide-content h3 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 
     .femicide-number {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 }
