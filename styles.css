@@ -347,9 +347,9 @@ html {
     background-image: url('assets/images/pare.png');
     background-position: right center;
     /* Anchored to the right edge */
-    background-size: cover;
+    background-size: auto 100%;
     background-repeat: no-repeat;
-    background-color: var(--bg-darker);
+    background-color: var(--bg-dark);
 
     border-top: 6px solid var(--accent-primary);
     margin-bottom: 4rem;
