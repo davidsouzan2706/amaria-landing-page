@@ -342,20 +342,15 @@ html {
 
 /* Femicide Highlight Card */
 .femicide-highlight-card {
-    /* Base background color + 2 images merged with gradients */
+    /* Base background color + Pare image merged with gradient */
     background-image:
-        /* Left gradient over Pare image to fade it into the center */
-        linear-gradient(to right, rgba(251, 249, 252, 0.4) 0%, rgba(251, 249, 252, 1) 40%),
-        url('assets/images/pare.png'),
-        /* Right gradient over Maos Amarradas to fade it into the center */
-        linear-gradient(to left, rgba(251, 249, 252, 0.2) 0%, rgba(251, 249, 252, 1) 40%),
-        url('assets/images/maosamarradas.jpeg');
+        /* Gradient covering the Pare image fading into the background color */
+        linear-gradient(to right, rgba(235, 225, 240, 0) 0%, rgba(235, 225, 240, 0.4) 15%, rgba(235, 225, 240, 0.95) 35%, var(--bg-darker) 50%),
+        url('assets/images/pare.png');
     background-position:
-        top left, left center,
-        top right, right center;
+        top left, left center;
     background-size:
-        50% 100%, 35% auto,
-        50% 100%, 40% cover;
+        50% 100%, 35% auto;
     background-repeat: no-repeat;
     background-color: var(--bg-darker);
 
