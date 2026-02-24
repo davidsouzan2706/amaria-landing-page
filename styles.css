@@ -1107,18 +1107,18 @@ html {
 
     /* Prevent text stretching viewport width */
     .femicide-highlight-card {
-        padding: 2rem;
+        padding: 2rem 1rem 1rem 1rem;
         background-position: center;
         background-size: auto 100%;
-        min-height: 500px;
-        /* Keep container tall */
+        min-height: 550px;
+        justify-content: flex-end;
+        align-items: center;
     }
 
     .femicide-content {
         max-width: 90%;
         padding: 1.5rem;
-        margin-top: auto;
-        /* Push grey box to bottom half */
+        margin: 0;
     }
 
     .femicide-content h3 {
