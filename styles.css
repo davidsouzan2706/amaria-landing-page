@@ -345,9 +345,8 @@ html {
     /* Base background color + Pare image merged with gradient */
     /* Base background color + Original Pare image with NO effects */
     background-image: url('assets/images/pare.png');
-    background-position: right center;
-    /* Anchored to the right edge */
-    background-size: auto 100%;
+    background-position: left center;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: var(--bg-dark);
 
@@ -356,8 +355,8 @@ html {
     padding: 3rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    /* Shift content to the left */
+    align-items: flex-end;
+    /* Text box strictly on the right */
     box-shadow: 0 15px 40px rgba(137, 65, 137, 0.1);
     position: relative;
     overflow: hidden;
