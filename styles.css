@@ -1107,24 +1107,39 @@ html {
 
     /* Prevent text stretching viewport width and adjust background image so the face is visible */
     .femicide-highlight-card {
-        padding: 50vw 1.5rem 1.5rem 1.5rem;
-        /* Push content down to leave space for the face */
-        background-position: top center;
-        background-size: cover;
+        padding: 4rem 1.5rem 1.5rem 1.5rem;
+        background-position: calc(100% + 120px) top;
+        background-size: 150% auto;
     }
 
     .femicide-content {
-        max-width: 100%;
-        padding: 1.5rem;
-        margin: 0;
+        max-width: 70%;
+        padding: 1rem;
+        margin-right: auto;
     }
 
     .femicide-content h3 {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
     }
 
     .femicide-number {
-        font-size: 2.8rem;
+        font-size: 2rem;
+    }
+
+    .femicide-alert {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .femicide-label {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+    }
+
+    .femicide-content p {
+        font-size: 0.8rem;
     }
 
     /* Disable Sticky Stacking on Mobile because flex-columns make cards taller than window, causing overlapping */
@@ -1199,11 +1214,11 @@ html {
     }
 
     .femicide-content h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
     }
 
     .femicide-number {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
 }
