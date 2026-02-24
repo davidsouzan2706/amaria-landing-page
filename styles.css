@@ -176,7 +176,7 @@ html {
     right: 0;
     bottom: 0;
     /* Soft light overlay to ensure text is readable but keeps it light */
-    background: linear-gradient(180deg, rgba(251, 249, 252, 0.6) 0%, rgba(251, 249, 252, 0.95) 100%);
+    background: linear-gradient(180deg, rgba(251, 249, 252, 0.4) 0%, rgba(251, 249, 252, 0.85) 100%);
     z-index: 2;
 }
 
