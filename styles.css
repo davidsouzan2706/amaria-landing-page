@@ -34,11 +34,14 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     overflow-x: hidden;
+    max-width: 100vw;
     line-height: 1.6;
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 /* Utilities */
@@ -1225,7 +1228,8 @@ html {
     }
 
     .project-text h2,
-    .section-header h2 {
+    .section-header h2,
+    .impact-text h2 {
         font-size: 1.5rem;
         /* Reduced for mobile */
     }
@@ -1398,7 +1402,8 @@ html {
     }
 
     .project-text h2,
-    .section-header h2 {
+    .section-header h2,
+    .impact-text h2 {
         font-size: 1.3rem;
         /* Even smaller for very narrow screens */
     }
@@ -1482,10 +1487,6 @@ html {
     }
 
     /* Impact Section Mobile Sizes */
-    .impact-text h2 {
-        font-size: 1.8rem;
-    }
-
     .impact-text h3 {
         font-size: 1.2rem;
     }
