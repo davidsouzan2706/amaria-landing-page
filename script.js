@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Hero Background Slider Logic */
     const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     let currentSlide = 0;
@@ -65,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const goToSlide = (index) => {
         // Reset old slide
         slides[currentSlide].classList.remove('active');
+        if (dots.length > 0) dots[currentSlide].classList.remove('active');
 
         // Update current slide index
         currentSlide = index;
@@ -73,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Set new slide
         slides[currentSlide].classList.add('active');
+        if (dots.length > 0) dots[currentSlide].classList.add('active');
     };
 
     const nextSlide = () => {
@@ -99,6 +102,16 @@ document.addEventListener("DOMContentLoaded", () => {
             prevSlide();
             startSlideTimer();
         });
+
+        // Initialize dots
+        if (dots.length > 0) {
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                    startSlideTimer();
+                });
+            });
+        }
 
         // Start automatic transition
         startSlideTimer();
