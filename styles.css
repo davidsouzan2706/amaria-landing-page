@@ -659,6 +659,68 @@ html {
     font-family: serif;
 }
 
+/* Impact Section */
+.impact-section {
+    padding: 6rem 0;
+    background: var(--bg-dark);
+}
+
+.impact-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.impact-text h2 {
+    font-size: 2.5rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.impact-text h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.impact-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.impact-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.impact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.impact-card h3 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.impact-card .stat {
+    margin-bottom: 0;
+}
+
+.plus-sign {
+    font-size: 3rem;
+    color: var(--accent-secondary);
+    font-weight: 800;
+    margin-left: 5px;
+}
+
 /* Speaker Section */
 .speaker-section {
     padding: 6rem 0;
@@ -1306,11 +1368,16 @@ html {
         /* Smaller logo font */
     }
 
-    .nav-cta {
+    .btn-nav {
         font-size: 0.65rem;
         /* Even smaller button font */
         padding: 0.4rem 0.8rem;
         /* Even tighter padding */
+    }
+
+    .floating-nav {
+        padding: 0.5rem 1rem;
+        width: 95%;
     }
 }
 
@@ -1320,11 +1387,12 @@ html {
         min-height: 100vh;
     }
 
-    .nav-cta {
+    .btn-nav {
         font-size: 0.6rem;
         /* Tiny font for smallest screens */
         padding: 0.3rem 0.6rem;
         /* Minimal padding */
+        white-space: nowrap;
     }
 
     .project-text h2,

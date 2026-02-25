@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Adiciona a classe 'visible' para iniciar a animação CSS
                 entry.target.classList.add('visible');
 
-                // Se o elemento contiver a classe que guarda o número (data-card ou femicide-stat-box), dispara a animação
-                if (entry.target.classList.contains('data-card') || entry.target.classList.contains('femicide-stat-box')) {
+                // Se o elemento contiver a classe que guarda o número (data-card, femicide-stat-box ou impact-card), dispara a animação
+                if (entry.target.classList.contains('data-card') || entry.target.classList.contains('femicide-stat-box') || entry.target.classList.contains('impact-card')) {
                     const numberEl = entry.target.querySelector('.number');
                     if (numberEl && !numberEl.classList.contains('animated')) {
                         animateValue(numberEl, 0, parseInt(numberEl.getAttribute('data-target')), 2000);
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, observerOptions);
 
     // Observar elementos com fade-in, slide e os containeres de números
-    const animatableElements = document.querySelectorAll('.fade-in, .slide-right, .data-card, .femicide-stat-box');
+    const animatableElements = document.querySelectorAll('.fade-in, .slide-right, .data-card, .femicide-stat-box, .impact-card');
     animatableElements.forEach(el => observer.observe(el));
 
 
