@@ -662,7 +662,6 @@ html {
 /* Impact Section */
 .impact-section {
     padding: 6rem 0;
-    background: var(--bg-dark);
 }
 
 .impact-text {
@@ -1213,7 +1212,8 @@ html {
     .project-section,
     .gallery-section,
     .author-section,
-    .cta-section {
+    .cta-section,
+    .impact-section {
         padding: 3rem 0;
         /* Cut vertical spacing in half for mobile */
     }
@@ -1477,6 +1477,32 @@ html {
 
     .femicide-number {
         font-size: 1.5rem;
+    }
+
+    /* Impact Section Mobile Sizes */
+    .impact-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .impact-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .impact-text p {
+        font-size: 0.95rem;
+    }
+
+    .impact-card {
+        padding: 1.5rem;
+    }
+
+    .impact-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .impact-number,
+    .plus-sign {
+        font-size: 2.2rem;
     }
 
     /* Further refine the background size for very narrow screens so the hand isn't cut off */
