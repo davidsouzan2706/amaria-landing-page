@@ -978,30 +978,76 @@ html {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     z-index: 5;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
 }
 
 .gallery-slider .slider-btn:hover {
     background: var(--accent-primary);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(137, 65, 137, 0.4);
 }
 
 .gallery-slider .prev-gallery {
-    left: 10px;
+    left: 15px;
+    animation: pulse-left 2s infinite;
 }
 
 .gallery-slider .next-gallery {
-    right: 10px;
+    right: 15px;
+    animation: pulse-right 2s infinite;
+}
+
+@keyframes pulse-right {
+    0% {
+        transform: translateY(-50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(137, 65, 137, 0.4);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1.05) translateX(3px);
+        box-shadow: 0 0 0 10px rgba(137, 65, 137, 0);
+    }
+
+    100% {
+        transform: translateY(-50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(137, 65, 137, 0);
+    }
+}
+
+@keyframes pulse-left {
+    0% {
+        transform: translateY(-50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(137, 65, 137, 0.4);
+    }
+
+    50% {
+        transform: translateY(-50%) scale(1.05) translateX(-3px);
+        box-shadow: 0 0 0 10px rgba(137, 65, 137, 0);
+    }
+
+    100% {
+        transform: translateY(-50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(137, 65, 137, 0);
+    }
+}
+
+.gallery-slider:hover .prev-gallery,
+.gallery-slider:hover .next-gallery {
+    animation-play-state: paused;
 }
 
 /* Fullscreen Image Modal */
@@ -1058,6 +1104,39 @@ html {
 
 .close-modal:hover {
     color: var(--accent-secondary);
+}
+
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.modal-nav:hover {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-modal {
+    left: 40px;
+}
+
+.next-modal {
+    right: 40px;
 }
 
 /* Animations for Observer */

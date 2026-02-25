@@ -152,16 +152,42 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
     const closeBtn = document.querySelector('.close-modal');
-    const allGalleryPhotos = document.querySelectorAll('.gallery-photo');
+    const allGalleryPhotos = Array.from(document.querySelectorAll('.gallery-photo'));
+    const prevModalBtn = document.querySelector('.prev-modal');
+    const nextModalBtn = document.querySelector('.next-modal');
+    let currentGlobalIndex = 0;
 
     if (modal && modalImg && closeBtn) {
+        const updateModalImage = (index) => {
+            if (index < 0) currentGlobalIndex = allGalleryPhotos.length - 1;
+            else if (index >= allGalleryPhotos.length) currentGlobalIndex = 0;
+            else currentGlobalIndex = index;
+            
+            modalImg.src = allGalleryPhotos[currentGlobalIndex].src;
+        };
+
         // Open modal on image click
-        allGalleryPhotos.forEach(photo => {
+        allGalleryPhotos.forEach((photo, index) => {
             photo.addEventListener('click', () => {
+                currentGlobalIndex = index;
                 modal.classList.add('active');
-                modalImg.src = photo.src;
+                updateModalImage(currentGlobalIndex);
             });
         });
+
+        if (prevModalBtn) {
+            prevModalBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                updateModalImage(currentGlobalIndex - 1);
+            });
+        }
+
+        if (nextModalBtn) {
+            nextModalBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                updateModalImage(currentGlobalIndex + 1);
+            });
+        }
 
         // Close modal on specific 'X' button click
         closeBtn.addEventListener('click', () => {
@@ -175,10 +201,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        // Close modal on Escape key press
+        // Keyboard controls
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
+            if (!modal.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') {
                 modal.classList.remove('active');
+            } else if (e.key === 'ArrowLeft') {
+                updateModalImage(currentGlobalIndex - 1);
+            } else if (e.key === 'ArrowRight') {
+                updateModalImage(currentGlobalIndex + 1);
             }
         });
     }
