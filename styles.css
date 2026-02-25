@@ -1213,6 +1213,12 @@ html {
         padding: 2rem;
     }
 
+    .stacking-text h3 {
+        font-size: 1.8rem;
+        /* Dramatically reduced for mobile */
+        margin-bottom: 1rem;
+    }
+
     .stacking-image {
         padding: 1.5rem;
         min-height: 250px;
@@ -1280,5 +1286,10 @@ html {
     /* Further refine the background size for very narrow screens so the hand isn't cut off */
     .femicide-highlight-card {
         background-size: 180% auto;
+    }
+
+    .stacking-text h3 {
+        font-size: 1.5rem;
+        /* Even smaller for very narrow screens */
     }
 }
