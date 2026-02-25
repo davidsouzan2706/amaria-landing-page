@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Hero Background Slider Logic */
     const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     let currentSlide = 0;
@@ -66,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const goToSlide = (index) => {
         // Reset old slide
         slides[currentSlide].classList.remove('active');
-        dots[currentSlide].classList.remove('active');
 
         // Update current slide index
         currentSlide = index;
@@ -75,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Set new slide
         slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
     };
 
     const nextSlide = () => {
@@ -101,14 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (prevBtn) prevBtn.addEventListener('click', () => {
             prevSlide();
             startSlideTimer();
-        });
-
-        // Initialize dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-                startSlideTimer();
-            });
         });
 
         // Start automatic transition
@@ -162,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (index < 0) currentGlobalIndex = allGalleryPhotos.length - 1;
             else if (index >= allGalleryPhotos.length) currentGlobalIndex = 0;
             else currentGlobalIndex = index;
-            
+
             modalImg.src = allGalleryPhotos[currentGlobalIndex].src;
         };
 
@@ -204,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Keyboard controls
         document.addEventListener('keydown', (e) => {
             if (!modal.classList.contains('active')) return;
-            
+
             if (e.key === 'Escape') {
                 modal.classList.remove('active');
             } else if (e.key === 'ArrowLeft') {
