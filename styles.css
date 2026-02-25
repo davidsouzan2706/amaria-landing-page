@@ -1245,10 +1245,10 @@ html {
     }
 
     .nav-cta {
-        font-size: 0.7rem;
-        /* Much smaller button font */
-        padding: 0.5rem 1rem;
-        /* Tighter padding for mobile */
+        font-size: 0.65rem;
+        /* Even smaller button font */
+        padding: 0.4rem 0.8rem;
+        /* Even tighter padding */
     }
 }
 
@@ -1256,6 +1256,13 @@ html {
     .hero {
         padding-top: 15vh;
         min-height: 100vh;
+    }
+
+    .nav-cta {
+        font-size: 0.6rem;
+        /* Tiny font for smallest screens */
+        padding: 0.3rem 0.6rem;
+        /* Minimal padding */
     }
 
     .project-text h2,
