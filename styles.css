@@ -1097,6 +1097,15 @@ html {
         flex-direction: column;
     }
 
+    section,
+    .project-section,
+    .gallery-section,
+    .author-section,
+    .cta-section {
+        padding: 3rem 0;
+        /* Cut vertical spacing in half for mobile */
+    }
+
     .project-image {
         width: 100%;
     }
