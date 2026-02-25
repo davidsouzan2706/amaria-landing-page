@@ -1101,6 +1101,12 @@ html {
         width: 100%;
     }
 
+    .project-text h2,
+    .section-header h2 {
+        font-size: 1.8rem;
+        /* Reduced for mobile */
+    }
+
     .glass-image-container {
         height: 450px;
         /* Increased slightly to give more room for the background image */
@@ -1233,6 +1239,12 @@ html {
     .hero {
         padding-top: 15vh;
         min-height: 100vh;
+    }
+
+    .project-text h2,
+    .section-header h2 {
+        font-size: 1.5rem;
+        /* Even smaller for very narrow screens */
     }
 
     .hero-title {
