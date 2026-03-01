@@ -345,6 +345,9 @@
                     overlay.style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }, 500);
+
+                // Dispara o script de animação da landing page oficial pra revelar a tela
+                setTimeout(initAnimations, 100);
             } else {
                 errorMsg.style.display = 'block';
                 input.style.borderColor = '#ef4444';
@@ -363,6 +366,28 @@
         });
 
         document.body.style.overflow = 'hidden';
+
+        // Sistema de Observer (Copiado do seu script.js original para rodar nessa pág)
+        function initAnimations() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in, .slide-up, .slide-left, .slide-right').forEach((el) => {
+                observer.observe(el);
+            });
+        }
     </script>
 </body>
 
