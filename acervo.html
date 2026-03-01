@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acesso restrito: Acervo Digital Interno do Projeto Amaria.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Acervo Interno | Projeto Amaria</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--bg-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .acervo-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-panel);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .acervo-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-logo span {
+            color: var(--accent-primary);
+        }
+
+        .internal-badge {
+            background: var(--accent-secondary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .acervo-header {
+            text-align: center;
+            padding: 4rem 2rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .acervo-header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            font-weight: 900;
+            line-height: 1.2;
+        }
+
+        .acervo-header p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+        }
+
+        .acervo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0 6rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .acervo-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--bg-panel);
+            border-radius: 20px;
+            border: 1px solid var(--border-panel);
+            box-shadow: 0 10px 30px rgba(137, 65, 137, 0.05);
+            /* Sombra roxa super sutil */
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .acervo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .acervo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(137, 65, 137, 0.15);
+            border-color: rgba(137, 65, 137, 0.3);
+        }
+
+        .acervo-card:hover::before {
+            opacity: 1;
+        }
+
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(137, 65, 137, 0.1);
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .acervo-card:hover .icon-wrapper {
+            background: var(--accent-primary);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px var(--accent-primary-glow);
+        }
+
+        .acervo-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .acervo-card p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            flex-grow: 1;
+            /* Empurra o botão pro fundo */
+        }
+
+        .acervo-footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-panel);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Sistema de "Senha" Simples em Tela Cheia */
+        #auth-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .auth-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-panel);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .auth-box i {
+            font-size: 3rem;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        .auth-box h2 {
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .auth-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .auth-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+            text-align: center;
+            font-family: var(--font-main);
+        }
+
+        .auth-box input:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .auth-box .error-msg {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            display: none;
+            font-weight: 600;
+        }
+
+        .auth-box button {
+            width: 100%;
+        }
+
+        .hidden-auth {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Painel de Proteção Básica -->
+    <div id="auth-overlay">
+        <div class="auth-box">
+            <i class="fa-solid fa-lock"></i>
+            <h2>Acesso Restrito</h2>
+            <p>Por favor, insira a chave de acesso para visualizar o acervo administrativo.</p>
+            <input type="password" id="auth-input" placeholder="Chave de Acesso" autocomplete="off">
+            <div class="error-msg" id="auth-error">Chave incorreta, tente novamente.</div>
+            <button class="btn btn-primary" id="auth-btn">Desbloquear Acervo</button>
+        </div>
+    </div>
+
+    <!-- Navegação Interna -->
+    <nav class="acervo-nav fade-in">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <i class="fa-solid fa-arrow-left" style="font-size: 1rem; color: var(--text-muted); margin-right: 10px;"
+                    title="Voltar ao Site Público"></i>
+                PROJETO <span>AMARIA</span>
+            </a>
+            <span class="internal-badge">Portal Admin</span>
+        </div>
+    </nav>
+
+    <!-- Cabeçalho da Página -->
+    <header class="acervo-header fade-in slide-up">
+        <h1>Acervo Digital Institucional</h1>
+        <p>Acesse rapidamente as pastas organizadas do Google Drive contendo todas as mídias em alta resolução das
+            nossas ações e palestras.</p>
+    </header>
+
+    <!-- Grid de Downloads -->
+    <main class="container">
+        <div class="acervo-grid">
+
+            <!-- Card 1: Banco de Fotos -->
+            <div class="acervo-card fade-in slide-up delay-1">
+                <div class="icon-wrapper"><i class="fa-solid fa-camera-retro"></i></div>
+                <h3>Banco de Fotos</h3>
+                <p>Galeria completa de imagens oficiais em alta qualidade registradas durante as ações nas escolas,
+                    empresas e eventos esportivos.</p>
+                <!-- LINK PARA SUBSTITUIR ABAIXO: -->
+                <a href="https://drive.google.com/drive/folders/1r0xlVdnJBBNfGDHCykReY7IGN5G9AUoR"
+                    class="btn btn-primary" target="_blank" style="width: 100%;">
+                    <i class="fa-brands fa-google-drive"></i> Acessar Pasta
+                </a>
+            </div>
+
+            <!-- Card 2: Banco de Vídeos -->
+            <div class="acervo-card fade-in slide-up delay-2">
+                <div class="icon-wrapper"><i class="fa-solid fa-film"></i></div>
+                <h3>Banco de Vídeos</h3>
+                <p>Repositório de mídias audiovisuais, clipes de conscientização, depoimentos e cobertura institucional
+                    do Projeto Amaria.</p>
+                <!-- LINK PARA SUBSTITUIR ABAIXO: -->
+                <a href="https://drive.google.com/drive/folders/1vmohRpzj6UmD3BasTok3HYqbHUEcvRQ2"
+                    class="btn btn-primary" target="_blank" style="width: 100%;">
+                    <i class="fa-brands fa-google-drive"></i> Acessar Pasta
+                </a>
+            </div>
+
+
+
+        </div>
+    </main>
+
+    <footer class="acervo-footer">
+        <p><i class="fa-solid fa-shield-halved" style="color: var(--accent-primary)"></i> Plataforma Administrativa -
+            Projeto Amaria 2026. Todos os links são estritamente confidenciais.</p>
+    </footer>
+
+    <!-- Script de Animações e "Autenticação" Local -->
+    <script>
+        // Mude a senha administrativa aqui
+        const CHAVE_ADMIN = "amaria2026";
+
+        const overlay = document.getElementById('auth-overlay');
+        const input = document.getElementById('auth-input');
+        const btn = document.getElementById('auth-btn');
+        const errorMsg = document.getElementById('auth-error');
+
+        function checkAuth() {
+            if (input.value === CHAVE_ADMIN) {
+                overlay.classList.add('hidden-auth');
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 500);
+            } else {
+                errorMsg.style.display = 'block';
+                input.style.borderColor = '#ef4444';
+                overlay.style.transform = 'translateX(-5px)';
+                setTimeout(() => overlay.style.transform = 'translateX(5px)', 50);
+                setTimeout(() => overlay.style.transform = 'translateX(-5px)', 100);
+                setTimeout(() => overlay.style.transform = 'translateX(0)', 150);
+            }
+        }
+
+        btn.addEventListener('click', checkAuth);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkAuth();
+            errorMsg.style.display = 'none';
+            input.style.borderColor = '#eee';
+        });
+
+        document.body.style.overflow = 'hidden';
+    </script>
+</body>
+
+</html>
