@@ -288,37 +288,192 @@
             nossas ações e palestras.</p>
     </header>
 
-    <!-- Grid de Downloads -->
+    <!-- Estilos Adicionais para a Galeria Embutida -->
+    <style>
+        .acervo-section {
+            padding: 2rem 0 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header-internal {
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-header-internal h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            font-weight: 800;
+        }
+
+        .section-header-internal i {
+            font-size: 2rem;
+            color: var(--accent-primary);
+        }
+
+        /* Upgrade no Slider do Amaria para tela maior no Acervo */
+        .immersive-slider {
+            width: 100%;
+            height: clamp(400px, 60vh, 700px);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .immersive-slider .gallery-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Para não cortar fotos na galeria interna */
+            background: #000;
+            /* Fundo preto pra fotos portrato */
+        }
+
+        /* Botão de Download na Imagem */
+        .direct-download-btn {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(137, 65, 137, 0.4);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .direct-download-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: var(--accent-secondary);
+            color: white;
+        }
+
+        /* Grade de Vídeos Nativos */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .video-card {
+            background: var(--bg-panel);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border-panel);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .video-player-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            /* 16:9 Aspect Ratio */
+            background: #000;
+        }
+
+        .video-player-wrapper video,
+        .video-player-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .video-info h3 {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        .dl-icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(137, 65, 137, 0.1);
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .dl-icon-btn:hover {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .section-header-internal h2 {
+                font-size: 1.5rem;
+            }
+
+            .immersive-slider {
+                height: 350px;
+            }
+
+            .direct-download-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 20px;
+
+                .acervo-card h3 {
+                    font-size: 1.3rem;
+                }
+            }
+    </style>
+
+    <!-- Grid de Downloads Mestre -->
     <main class="container">
         <div class="acervo-grid">
 
             <!-- Card 1: Banco de Fotos -->
             <div class="acervo-card fade-in slide-up delay-1">
                 <div class="icon-wrapper"><i class="fa-solid fa-camera-retro"></i></div>
-                <h3>Banco de Fotos</h3>
-                <p>Galeria completa de imagens oficiais em alta qualidade registradas durante as ações nas escolas,
-                    empresas e eventos esportivos.</p>
-                <!-- LINK PARA SUBSTITUIR ABAIXO: -->
-                <a href="https://drive.google.com/drive/folders/1r0xlVdnJBBNfGDHCykReY7IGN5G9AUoR"
-                    class="btn btn-primary" target="_blank" style="width: 100%;">
-                    <i class="fa-brands fa-google-drive"></i> Acessar Pasta
+                <h3>Banco de Fotos Oficiais</h3>
+                <p>Acesse o acervo completo de imagens em alta resolução do Projeto Amaria. Organize, visualize e faça o
+                    download em massa das (+700) mídias arquivadas.</p>
+                <!-- COLE O LINK DA SUA PASTA MÃE DE FOTOS ABAIXO -->
+                <a href="COLE_O_LINK_DA_PASTA_DE_FOTOS_AQUI" class="btn btn-primary" target="_blank"
+                    style="width: 100%;">
+                    <i class="fa-brands fa-google-drive"></i> Acessar Pasta de Fotos
                 </a>
             </div>
 
             <!-- Card 2: Banco de Vídeos -->
             <div class="acervo-card fade-in slide-up delay-2">
                 <div class="icon-wrapper"><i class="fa-solid fa-film"></i></div>
-                <h3>Banco de Vídeos</h3>
-                <p>Repositório de mídias audiovisuais, clipes de conscientização, depoimentos e cobertura institucional
-                    do Projeto Amaria.</p>
-                <!-- LINK PARA SUBSTITUIR ABAIXO: -->
-                <a href="https://drive.google.com/drive/folders/1vmohRpzj6UmD3BasTok3HYqbHUEcvRQ2"
-                    class="btn btn-primary" target="_blank" style="width: 100%;">
-                    <i class="fa-brands fa-google-drive"></i> Acessar Pasta
+                <h3>Banco de Vídeos Institucionais</h3>
+                <p>Navegue pelo repositório bruto audiovisual contendo depoimentos, coberturas de eventos escolares e
+                    clipes gravados do Projeto.</p>
+                <!-- COLE O LINK DA SUA PASTA MÃE DE VÍDEOS ABAIXO -->
+                <a href="COLE_O_LINK_DA_PASTA_DE_VIDEOS_AQUI" class="btn btn-primary" target="_blank"
+                    style="width: 100%;">
+                    <i class="fa-brands fa-google-drive"></i> Acessar Pasta de Vídeos
                 </a>
             </div>
-
-
 
         </div>
     </main>
@@ -328,11 +483,9 @@
             Projeto Amaria 2026. Todos os links são estritamente confidenciais.</p>
     </footer>
 
-    <!-- Script de Animações e "Autenticação" Local -->
+    <!-- Script de Autenticação -->
     <script>
-        // Mude a senha administrativa aqui
         const CHAVE_ADMIN = "amaria2026";
-
         const overlay = document.getElementById('auth-overlay');
         const input = document.getElementById('auth-input');
         const btn = document.getElementById('auth-btn');
@@ -345,8 +498,6 @@
                     overlay.style.display = 'none';
                     document.body.style.overflow = 'auto';
                 }, 500);
-
-                // Dispara o script de animação da landing page oficial pra revelar a tela
                 setTimeout(initAnimations, 100);
             } else {
                 errorMsg.style.display = 'block';
@@ -367,14 +518,9 @@
 
         document.body.style.overflow = 'hidden';
 
-        // Sistema de Observer (Copiado do seu script.js original para rodar nessa pág)
         function initAnimations() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
+            // Inicializa as animações fade-in
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -384,7 +530,7 @@
                 });
             }, observerOptions);
 
-            document.querySelectorAll('.fade-in, .slide-up, .slide-left, .slide-right').forEach((el) => {
+            document.querySelectorAll('.fade-in, .slide-up').forEach((el) => {
                 observer.observe(el);
             });
         }
